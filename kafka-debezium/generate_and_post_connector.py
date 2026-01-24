@@ -33,14 +33,10 @@ connector_config = {
 # -----------------------------
 # Send request to Debezium Connect
 # -----------------------------
-url = "http://localhost:8083/connectors"
-headers = {"Content-Type": "application/json"}
+url = "http://127.0.0.1:8083/connectors"
 
-response = requests.post(url, headers=headers, data=json.dumps(connector_config))
+response = requests.post(url, json=connector_config)
 
-# -----------------------------
-# Debug/Output
-# -----------------------------
 if response.status_code == 201:
     print("✅ Connector created successfully!")
 elif response.status_code == 409:
