@@ -15,7 +15,7 @@ connector_config = {
     "name": "postgres-connector",
     "config": {
         "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
-        "database.hostname": os.getenv("POSTGRES_HOST"),
+        "database.hostname": os.getenv("POSTGRES_DOCKER_HOST"),
         "database.port": os.getenv("POSTGRES_PORT"),
         "database.user": os.getenv("POSTGRES_USER"),
         "database.password": os.getenv("POSTGRES_PASSWORD"),
