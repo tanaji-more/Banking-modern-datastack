@@ -30,6 +30,7 @@ connector_config = {
     },
 }
 
+
 # -----------------------------
 # Send request to Debezium Connect
 # -----------------------------
