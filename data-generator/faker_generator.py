@@ -110,15 +110,19 @@ try:
     iteration = 0
     while True:
         iteration += 1
-        print(f"\n--- Iteration {iteration} started ---")
+        print(f"\n--- Iteration {iteration} started ---", flush=True)
         run_iteration()
-        print(f"--- Iteration {iteration} finished ---")
+        print(f"--- Iteration {iteration} finished ---", flush=True)
         if not LOOP:
             break
         time.sleep(SLEEP_SECONDS)
 
 except KeyboardInterrupt:
     print("\nInterrupted by user. Exiting gracefully...")
+
+except Exception as e:
+    print("\n❌ ERROR OCCURRED:", e)
+    raise
 
 finally:
     cur.close()
