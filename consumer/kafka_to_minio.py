@@ -68,7 +68,7 @@ for message in consumer:
 
     if record:
         buffer[topic].append(record)
-        print(f"[{topic}] -> {record}")  # Debugging
+        print(f"[{topic}] -> {record}")  # Debugging output
 
     if len(buffer[topic]) >= batch_size:
         write_to_minio(topic.split('.')[-1], buffer[topic])
